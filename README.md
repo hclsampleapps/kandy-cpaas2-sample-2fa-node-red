@@ -1,4 +1,4 @@
-# kandy-cpaas2-sample-2fa-node
+# kandy-cpaas2-sample-2fa-node-red
 
 This is an elementary login authentication use case of two-factor authentication via SMS or Email. The main focus of this application is to understand the 2FA flow.
 
