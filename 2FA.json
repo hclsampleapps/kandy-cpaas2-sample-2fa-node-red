@@ -1,0 +1,149 @@
+[
+    {
+        "id": "df317095.88624",
+        "type": "tab",
+        "label": "2FA",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8adb09b4.895868",
+        "type": "inject",
+        "z": "df317095.88624",
+        "name": "inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "56191271.bb610c"
+            ]
+        ]
+    },
+    {
+        "id": "c455612e.06e87",
+        "type": "debug",
+        "z": "df317095.88624",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "cpaas_response",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "12a5c81e.244a38",
+        "type": "inject",
+        "z": "df317095.88624",
+        "name": "inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 140,
+        "wires": [
+            [
+                "6aae282.c7d75d8"
+            ]
+        ]
+    },
+    {
+        "id": "56191271.bb610c",
+        "type": "2FA",
+        "z": "df317095.88624",
+        "creds": "",
+        "name": "",
+        "destinationAddress": "",
+        "message": "{code}",
+        "method": "sms",
+        "subject": "",
+        "length": "6",
+        "expiry": "120",
+        "format": "numeric",
+        "operationType": "send",
+        "codeId": "",
+        "verificationCode": "",
+        "x": 360,
+        "y": 60,
+        "wires": [
+            [
+                "ad8f36f1.070408"
+            ]
+        ]
+    },
+    {
+        "id": "ad8f36f1.070408",
+        "type": "debug",
+        "z": "df317095.88624",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "cpaas_response",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "6aae282.c7d75d8",
+        "type": "2FA",
+        "z": "df317095.88624",
+        "creds": "",
+        "name": "",
+        "destinationAddress": "",
+        "message": "",
+        "method": "sms",
+        "subject": "",
+        "length": "6",
+        "expiry": "120",
+        "format": "numeric",
+        "operationType": "verify",
+        "codeId": "",
+        "verificationCode": "",
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "c455612e.06e87"
+            ]
+        ]
+    }
+]
